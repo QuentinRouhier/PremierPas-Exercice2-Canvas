@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Canvas ex2</title>
+</head>
+<body>
+  <canvas id="mon_canvas" width="400" height="400">
+    Texte alternatif pour les navigateurs ne supportant pas Canvas.
+  </canvas>
+  <script>
+  var c = document.getElementById("mon_canvas");
+  var ctx = c.getContext("2d");
+  // toit de la maison
+  ctx.fillStyle = "orange";
+  ctx.fillRect(50,50,200,100); //gauche haut droite bas
+  //decoupage du toit
+  ctx.beginPath();
+  ctx.moveTo(50,50);
+  ctx.lineTo(150,50);
+  ctx.lineTo(50,150);
+  ctx.lineTo(50,50);
+  ctx.moveTo(250,50);
+  ctx.lineTo(250,150);
+  ctx.lineTo(150,50);
+  ctx.lineTo(250,50);
+  ctx.closePath();      // Fermeture du chemin (facultative)
+  ctx.fillStyle = "white"; // Définition de la couleur de remplissage
+  ctx.fill();           // Remplissage du dernier chemin tracé
+  //base de la maison
+  ctx.fillStyle = "lightBlue";
+  ctx.fillRect(50,150,200,200); //gauche haut droite bas
+  //fenetre et maison
+  ctx.fillStyle = "silver";
+  ctx.fillRect(70,175,50,50); //gauche haut droite bas
+  ctx.fillRect(180,175,50,50); //gauche haut droite bas
+  ctx.fillRect(125,250,50,100); //gauche haut droite bas
+
+  </script>
+</body>
+</html>
